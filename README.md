@@ -3,10 +3,16 @@
 **iPhone-style app folders for your Mac's Dock.**
 
 <p align="center">
-  <img src="docs/panel.png" width="320" alt="A Foldlet group called Games, open above the Dock, showing five game launchers in a grid and an Add tile">
+  <img src="docs/dock.png" width="780" alt="The macOS Dock with two Foldlet groups, each icon showing a small grid of the apps inside; the cursor is over one labelled AI + Coding">
 </p>
 
-Foldlet lets you gather apps into groups like **Games**, **Work** or **Design**. Each group sits in your Dock as a single icon showing a tiny 3×3 grid of the apps inside, just like a folder on iPhone. Click it and the group pops open so you can launch any app in it.
+Foldlet lets you gather apps into groups like **Games**, **Work** or **AI + Coding**. Each group sits in your Dock as a single icon showing a tiny 3×3 grid of the apps inside, just like a folder on iPhone.
+
+<p align="center">
+  <img src="docs/panel.png" width="420" alt="The AI + Coding group open above the Dock, showing six apps in a grid and an Add tile">
+</p>
+
+Click the group and it pops open right above the Dock. Click an app to launch it.
 
 - **Works with the regular Mac Dock:** there's no Dock replacement, and groups can sit anywhere among your apps.
 - **Live mini-icon grid** on every group's Dock icon.
@@ -53,6 +59,28 @@ The installer builds Foldlet on your Mac (about 20 seconds), creates a group cal
 | **New, rename or delete a group** | Right-click any group's Dock icon → **New Group…**, **Rename Group…** or **Delete Group…** |
 
 The extra right-click options appear once a group is running. If you only see the standard Dock options, click the group once first.
+
+### Adding apps
+
+<table>
+  <tr>
+    <td width="50%" valign="top" align="center">
+      <img src="docs/add-tile-menu.png" alt="The open group with the Add tile's menu showing Choose Apps… and Add Apps from Dock…"><br>
+      <sub>Click <b>+</b> in a group to pick apps from your Applications folder or from your Dock.</sub>
+    </td>
+    <td width="50%" valign="top" align="center">
+      <img src="docs/add-from-dock.png" alt="The Add apps from the Dock dialog listing pinned Dock apps with checkboxes and an option to also remove them from the Dock"><br>
+      <sub><b>Add Apps from Dock…</b> lists the apps pinned in your Dock. Tick the ones to move, and they're unpinned from the Dock too.</sub>
+    </td>
+  </tr>
+</table>
+
+### Managing groups
+
+<p align="center">
+  <img src="docs/dock-menu.png" width="340" alt="A group's right-click Dock menu listing its apps, then Add Apps…, Add Apps from Dock…, New Group…, Rename Group… and Delete Group…">
+</p>
+<p align="center"><sub>Right-click a group in the Dock to launch any of its apps directly, add apps, or create, rename and delete groups.</sub></p>
 
 ## Good to know
 

@@ -297,10 +297,17 @@ enum Groups {
     /// Apps pinned in the Dock, excluding Foldlet groups themselves.
     static func dockApps() -> [DockApp] {
         DockPrefs.tiles().compactMap { t in
+            let bid = DockPrefs.bundleID(t)
+            if let b = bid, b.hasPrefix("io.github.wmtaff.foldlet.") { return nil }   // another group
             guard let p = DockPrefs.path(t), p.hasSuffix(".app"), p != Env.selfPath else { return nil }
-            let u = URL(fileURLWithPath: p)
+            var u = URL(fileURLWithPath: p)
+            if !FileManager.default.fileExists(atPath: p) {
+                // Stale Dock path (e.g. a renamed group or a moved app): resolve by bundle ID or skip it.
+                guard let b = bid, let alt = NSWorkspace.shared.urlForApplication(withBundleIdentifier: b) else { return nil }
+                u = alt
+            }
             if let b = Bundle(url: u), (b.object(forInfoDictionaryKey: "FoldletGroup") as? Bool) == true { return nil }
-            return DockApp(url: u, name: DockPrefs.label(t) ?? displayName(u), bundleID: DockPrefs.bundleID(t))
+            return DockApp(url: u, name: DockPrefs.label(t) ?? displayName(u), bundleID: bid)
         }
     }
 }
