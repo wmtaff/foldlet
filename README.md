@@ -79,6 +79,13 @@ The extra right-click options appear once a group is running. If you only see th
   </tr>
 </table>
 
+### Removing apps
+
+<p align="center">
+  <img src="docs/app-menu.png" width="400" alt="Right-click menu on an app inside a group, with Open, Show in Finder, Move to Dock and Remove from Group">
+</p>
+<p align="center"><sub>Right-click an app in a group to open it, show it in Finder, move it back to the Dock, or remove it from the group. You can also just drag it out of the group.</sub></p>
+
 ### Managing groups
 
 <p align="center">
