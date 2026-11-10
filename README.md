@@ -111,7 +111,7 @@ Run the install command again. It rebuilds Foldlet and updates every group in pl
 curl -fsSL https://raw.githubusercontent.com/wmtaff/foldlet/main/uninstall.sh | bash
 ```
 
-This removes every group from your Dock and moves Foldlet's files to the Trash. Your apps aren't touched.
+This removes verified Foldlet groups from your Dock and moves their app bundles and matching group data to the Trash. Other apps, unrelated files, symbolic links, and data without a matching group are left in place. Foldlet's directories are removed only when empty.
 
 ## How it works
 
