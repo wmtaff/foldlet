@@ -6,7 +6,7 @@
   <img src="docs/dock.png" width="780" alt="The macOS Dock with two Foldlet groups, each icon showing a small grid of the apps inside; the cursor is over one labelled AI + Coding">
 </p>
 
-Foldlet lets you gather apps into groups like **Games**, **Work** or **AI + Coding**. Each group sits in your Dock as a single icon showing a tiny 3×3 grid of the apps inside, just like a folder on iPhone.
+Foldlet lets you gather apps into groups like **Games**, **Work** or **AI + Coding**. Each group sits in your Dock as a single icon showing mini versions of the apps inside, just like a folder on iPhone.
 
 <p align="center">
   <img src="docs/panel.png" width="420" alt="The AI + Coding group open above the Dock, showing six apps in a grid and an Add tile">
@@ -15,7 +15,8 @@ Foldlet lets you gather apps into groups like **Games**, **Work** or **AI + Codi
 Click the group and it pops open right above the Dock. Click an app to launch it.
 
 - **Works with the regular Mac Dock:** there's no Dock replacement, and groups can sit anywhere among your apps.
-- **Live mini-icon grid** on every group's Dock icon.
+- **Live mini icons** of the apps inside on every group's Dock icon.
+- **No limit on group size:** the group grows to fit, and its icon previews the first nine apps.
 - **Drag** apps in, drag them out, drag to reorder.
 - **Clear out your Dock:** move apps that are already pinned there into a group in one step.
 - **As many groups as you like.**
