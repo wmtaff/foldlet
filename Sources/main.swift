@@ -482,7 +482,6 @@ final class DropView: NSView {
 final class Controller: NSObject, NSApplicationDelegate {
     let store = Store()
     var panel: GroupPanel!
-    var effect: NSVisualEffectView!
     var dropView: DropView!
     var titleLabel: NSTextField!
     var tiles: [TileView] = []
@@ -580,22 +579,36 @@ final class Controller: NSObject, NSApplicationDelegate {
         panel.collectionBehavior = [.moveToActiveSpace, .fullScreenAuxiliary]
         panel.onCancel = { [weak self] in self?.hidePanel() }
 
-        effect = NSVisualEffectView()
-        effect.material = .popover
-        effect.blendingMode = .behindWindow
-        effect.state = .active
-        effect.maskImage = IconRenderer.roundedMask(radius: radius)
-        panel.contentView = effect
-
-        dropView = DropView(frame: effect.bounds)
+        dropView = DropView(frame: NSRect(x: 0, y: 0, width: 300, height: 200))
         dropView.controller = self
         dropView.autoresizingMask = [.width, .height]
-        effect.addSubview(dropView)
+        installBackdrop()
 
         titleLabel = NSTextField(labelWithString: Env.name)
         titleLabel.font = .systemFont(ofSize: 15, weight: .semibold)
         titleLabel.alignment = .center
         dropView.addSubview(titleLabel)
+    }
+
+    /// Panel background. On macOS 26+ use the system Liquid Glass material, the same one
+    /// the Dock uses for folder stacks (e.g. Downloads). Earlier systems get a popover-style blur.
+    func installBackdrop() {
+        #if compiler(>=6.2)
+        if #available(macOS 26.0, *) {
+            let glass = NSGlassEffectView(frame: dropView.frame)
+            glass.cornerRadius = radius
+            glass.contentView = dropView
+            panel.contentView = glass
+            return
+        }
+        #endif
+        let effect = NSVisualEffectView(frame: dropView.frame)
+        effect.material = .popover
+        effect.blendingMode = .behindWindow
+        effect.state = .active
+        effect.maskImage = IconRenderer.roundedMask(radius: radius)
+        effect.addSubview(dropView)
+        panel.contentView = effect
     }
 
     func reload() {
