@@ -2,7 +2,7 @@
 # Foldlet installer — builds Foldlet from source on your Mac and pins your first group to the Dock.
 #
 #   curl -fsSL https://raw.githubusercontent.com/wmtaff/foldlet/main/install.sh | bash
-#   curl -fsSL https://raw.githubusercontent.com/wmtaff/foldlet/main/install.sh | bash -s -- "Work"   # custom first group name
+#   curl -fsSL https://raw.githubusercontent.com/wmtaff/foldlet/main/install.sh | bash -s -- "Games"  # custom first group name
 #   ./install.sh [FirstGroupName]                                                                   # from a clone
 #
 # Running it again rebuilds and updates every existing group in place.
@@ -10,7 +10,7 @@ set -euo pipefail
 
 REPO="wmtaff/foldlet"
 BRANCH="main"
-FIRST_GROUP="${1:-Games}"
+FIRST_GROUP="${1:-Work}"
 GROUPS_DIR="$HOME/Applications/Foldlet"
 EXE="Foldlet"
 

@@ -31,9 +31,13 @@ Open **Terminal** and paste:
 curl -fsSL https://raw.githubusercontent.com/wmtaff/foldlet/main/install.sh | bash
 ```
 
-The installer builds Foldlet on your Mac (about 20 seconds), creates a group called **Games**, pins it to your Dock and opens it. Then just drop apps onto it.
+The installer builds Foldlet on your Mac (about 20 seconds), creates a group called **Work**, pins it to your Dock and opens it. Then just drop apps onto it.
 
-- **Different name for your first group?** Use `curl -fsSL https://raw.githubusercontent.com/wmtaff/foldlet/main/install.sh | bash -s -- "Work"`
+- **Different name for your first group?** Add it to the end of the command. For example, to call it **Games**:
+  ```bash
+  curl -fsSL https://raw.githubusercontent.com/wmtaff/foldlet/main/install.sh | bash -s -- "Games"
+  ```
+  You can also install with the default name, then right-click **Work** in the Dock → **Rename Group…**
 - **First time using developer tools?** macOS will ask to install Apple's free *Command Line Tools*. Click **Install**, wait for it to finish, then run the command again.
 
 <details>
